@@ -22,7 +22,7 @@ local BCDUMP = {
 
     -- If you perform *any* kind of private modifications to the bytecode itself
     -- or to the dump format, you *must* set BCDUMP_VERSION to 0x80 or higher.
-    VERSION = 1,
+    VERSION = 2,
 
     -- Compatibility flags.
     F_BE    = 0x01,
@@ -60,6 +60,8 @@ local BCDEF_TAB = {
     {'ISFC', 'dst', 'none', 'var', 'none'},
     {'IST', 'none', 'none', 'var', 'none'},
     {'ISF', 'none', 'none', 'var', 'none'},
+    {'ISTYPE', 'var', 'none', 'lit', 'none'},
+    {'ISNUM', 'var', 'none', 'lit', 'none'},
 
     -- Unary ops.
     {'MOV', 'dst', 'none', 'var', 'none'},
@@ -114,10 +116,12 @@ local BCDEF_TAB = {
     {'TGETV', 'dst', 'var', 'var', 'index'},
     {'TGETS', 'dst', 'var', 'str', 'index'},
     {'TGETB', 'dst', 'var', 'lit', 'index'},
+    {'TGETR', 'dst', 'var', 'var', 'index'},
     {'TSETV', 'var', 'var', 'var', 'newindex'},
     {'TSETS', 'var', 'var', 'str', 'newindex'},
     {'TSETB', 'var', 'var', 'lit', 'newindex'},
     {'TSETM', 'base', 'none', 'num', 'newindex'},
+    {'TSETR', 'var', 'var', 'var', 'newindex'},
 
     -- Calls and vararg handling. T = tail call.
     {'CALLM', 'base', 'lit', 'lit', 'call'},
