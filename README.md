@@ -1,3 +1,37 @@
+How to build for windows
+===
+
+### download src/bin and install ###
+
+- download mingw
+- download luajit sources
+- download luajit-lang-toolkit sources
+
+- install mingw
+- run msys shell
+
+### Build and install luajit v2.1-beta3 ###
+- cd to luajit src folder
+```
+$ make
+$ make install
+```
+
+```
+$ cp lua51.dll /usr/local/bin/   //fix for launch luajit
+$ cp lua51.dll /usr/local/lib/libluajit.a //fix for gcc -lluajit
+$ ln -sf /usr/local/bin/luajit-2.1.0-beta3.exe /usr/local/bin/luajit.exe //make link to luajit.exe
+$ export LUA_PATH="$LUA_PATH:/usr/local/share/luajit-2.1.0-beta3/?.lua" //add luajit scripts to path
+```
+
+### Build and install luajit v2.1-beta3 ###
+- cd to luajit-lang-toolkit src folder
+```
+$ make
+```
+
+
+
 LuaJIT Language Toolkit
 ===
 

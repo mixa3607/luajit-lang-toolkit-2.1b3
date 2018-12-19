@@ -37,8 +37,8 @@ AR= ar rcu
 RANLIB= ranlib
 
 ifeq ($(HOST_SYS),Windows)
-  LUAJIT_CFLAGS := -IC:/fra/local/include
-  LUAJIT_LIBS := -LC:/fra/local/lib -lluajit
+  LUAJIT_CFLAGS := -I/usr/local/include/luajit-2.1
+  LUAJIT_LIBS := -L/usr/local/lib -lluajit
 else
   LUAJIT_CFLAGS := $(shell pkg-config luajit --cflags)
   LUAJIT_LIBS := $(shell pkg-config luajit --libs)
