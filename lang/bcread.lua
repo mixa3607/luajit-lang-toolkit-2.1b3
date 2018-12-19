@@ -754,7 +754,7 @@ function Printer:enter_proto(ls)
     log(self.out, ls, ".. prototype ..")
 end
 
-function Printer:header(ls) log(self.out, ls, "Header LuaJIT 2.0 BC") end
+function Printer:header(ls) log(self.out, ls, "Header LuaJIT 2.1 BC") end
 function Printer:flags(ls, flags) log(self.out, ls, format("Flags: %s", flags_string(flags))) end
 function Printer:enter_kgc(ls) log(self.out, ls, ".. kgc ..") end
 function Printer:enter_knum(ls) log(self.out, ls, ".. knum ..") end
@@ -766,7 +766,7 @@ function Printer:proto_flags(ls, flags) log(self.out, ls, "prototype flags %s", 
 function Printer:proto_len(ls, len) log(self.out, ls, "prototype length %d", len) end
 function Printer:proto_numparams(ls, numparams) log(self.out, ls, "parameters number %d", numparams) end
 function Printer:proto_framesize(ls, framesize) log(self.out, ls, "framesize %d", framesize) end
-function Printer:proto_sizes(ls, sizeuv, sizekgc, sizekn, sizebc) log(self.out, ls, "size uv: %d kgc: %d kn: %d bc: %d", sizeuv, sizekgc, sizekn, sizebc) end
+function Printer:proto_sizes(ls, sizeuv, sizekgc, sizekn, sizebc) log(self.out, ls, "size uv: %d kgc: %d kn: %d bc: %d", sizeuv, sizekgc, sizekn, sizebc-1) end
 function Printer:proto_debug_size(ls, sizedbg) log(self.out, ls, "debug size %d", sizedbg) end
 
 function Printer:proto_lines(ls, firstline, numlines)
