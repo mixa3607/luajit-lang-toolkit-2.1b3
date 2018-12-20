@@ -18,13 +18,13 @@ $ make install
 ```
 
 ```
-$ cp lua51.dll /usr/local/bin/   //fix for launch luajit
-$ cp lua51.dll /usr/local/lib/libluajit.a //fix for gcc -lluajit
-$ ln -sf /usr/local/bin/luajit-2.1.0-beta3.exe /usr/local/bin/luajit.exe //make link to luajit.exe
-$ export LUA_PATH="$LUA_PATH:/usr/local/share/luajit-2.1.0-beta3/?.lua" //add luajit scripts to path
+$ cp lua51.dll /usr/local/bin/   #fix for launch luajit
+$ cp lua51.dll /usr/local/lib/libluajit.a #fix for gcc -lluajit
+$ ln -sf /usr/local/bin/luajit-2.1.0-beta3.exe /usr/local/bin/luajit.exe #make link to luajit.exe
+$ export LUA_PATH="$LUA_PATH:/usr/local/share/luajit-2.1.0-beta3/?.lua" #add luajit scripts to path
 ```
 
-### Build and install luajit v2.1-beta3 ###
+### Build luajit v2.1-beta3 ###
 - cd to luajit-lang-toolkit src folder
 ```
 $ make
